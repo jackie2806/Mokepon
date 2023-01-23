@@ -6,9 +6,9 @@ function iniciarJuego() {
 }
 
 function seleccionarMascotaJugador() {
-    hipodoge = document.getElementById('hipodoge')
-    capipepo = document.getElementById('capipepo')
-    ratigueya = document.getElementById('ratigueya')
+    let hipodoge = document.getElementById('hipodoge')
+    let capipepo = document.getElementById('capipepo')
+    let ratigueya = document.getElementById('ratigueya')
     if(hipodoge.checked === true){
         alert('SELECCIONASTE: '+ hipodoge.id)
     } else if (capipepo.checked === true){
