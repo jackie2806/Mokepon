@@ -23,6 +23,10 @@ function seleccionarMascotaJugador() {
     }
     
 }
+function aleatorio(min, max){
+    return Math.floor(Math.random()*(max-min +1)+min)
+
+}
 
 //La etiqueta SCRIPT que está en la etiqueta HEAD del HTML necesita que primero se cargue 
 window.addEventListener('load', iniciarJuego)
