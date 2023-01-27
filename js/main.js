@@ -1,8 +1,33 @@
+let ataqueJugador;
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota');
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);
+    let botonAtaqueFuego = document. getElementById('boton-fuego');
+    botonAtaqueFuego.addEventListener('click', ataqueFuego);
+    let botonAtaqueAgua = document. getElementById('boton-agua');
+    botonAtaqueAgua.addEventListener('click', ataqueAgua);
+    let botonAtaqueTierra = document. getElementById('boton-tierra');
+    botonAtaqueTierra.addEventListener('click',ataqueTierra);
     
+}
+
+function ataqueFuego(tipoAtaque){
+    tipoAtaque = ataqueJugador;
+    ataqueJugador = 'FUEGO';
+    alert(ataqueJugador);
+}
+
+function ataqueAgua(tipoAtaque){
+    tipoAtaque = ataqueJugador;
+    ataqueJugador = 'AGUA';
+    alert(ataqueJugador);
+}
+
+function ataqueTierra(tipoAtaque){
+    tipoAtaque = ataqueJugador;
+    ataqueJugador = 'TIERRA';
+    alert(ataqueJugador);
 }
 
 function seleccionarMascotaJugador() {
