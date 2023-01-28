@@ -13,40 +13,42 @@ function iniciarJuego() {
 }
 
 function ataqueFuego(){
-    let spanAtaqueJugador = document.getElementById('ataque-jugador');
-    ataqueJugador = 'FUEGO';
-    spanAtaqueJugador.innerHTML = ataqueJugador;
-    
+    ataqueJugador = 'FUEGO';     
     ataqueEnemigoAleatorio();
 }
 
-function ataqueAgua(){
-    let spanAtaqueJugador = document.getElementById('ataque-jugador');
-    ataqueJugador = 'AGUA';
-    spanAtaqueJugador.innerHTML = ataqueJugador;
+function ataqueAgua(){    
+    ataqueJugador = 'AGUA'; 
     ataqueEnemigoAleatorio();
 }
 
-function ataqueTierra(){
-    let spanAtaqueJugador = document.getElementById('ataque-jugador');
-    ataqueJugador = 'TIERRA';
-    spanAtaqueJugador.innerHTML = ataqueJugador;
+function ataqueTierra(){    
+    ataqueJugador = 'TIERRA';    
     ataqueEnemigoAleatorio();
 }
 
 function ataqueEnemigoAleatorio(){
     let ataqueAleatorio = aleatorio(1,3);
-    let spanAtaqueEnemigo = document.getElementById('ataque-enemigo');
+    
     if(ataqueAleatorio == 1){
         ataqueEnemigo = 'FUEGO';
-        spanAtaqueEnemigo.innerHTML = ataqueEnemigo;        
+              
     } else if (ataqueAleatorio == 2){
         ataqueEnemigo = 'AGUA';
-        spanAtaqueEnemigo.innerHTML = ataqueEnemigo;
+        
     } else {
         ataqueEnemigo = 'TIERRA';
-        spanAtaqueEnemigo.innerHTML = ataqueEnemigo;
+        
     }
+
+    crearMensaje();
+}
+
+function crearMensaje(){
+    let sectionMensajes = document.getElementById('mostrar-mensajes');
+    let mensajes = document.createElement('p');
+    mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' Estado: Pendiente';
+    sectionMensajes.appendChild(mensajes);
 }
 
 function seleccionarMascotaJugador() {
