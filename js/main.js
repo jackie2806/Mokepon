@@ -41,7 +41,6 @@ function ataqueEnemigoAleatorio(){
         ataqueEnemigo = 'TIERRA';
         
     }
-
     
     combate();
 }
