@@ -7,12 +7,14 @@ let vidasEnemigo = 3;
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota');
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);
-    let botonAtaqueFuego = document. getElementById('boton-fuego');
+    let botonAtaqueFuego = document.getElementById('boton-fuego');
     botonAtaqueFuego.addEventListener('click', ataqueFuego);
-    let botonAtaqueAgua = document. getElementById('boton-agua');
+    let botonAtaqueAgua = document.getElementById('boton-agua');
     botonAtaqueAgua.addEventListener('click', ataqueAgua);
-    let botonAtaqueTierra = document. getElementById('boton-tierra');
-    botonAtaqueTierra.addEventListener('click', ataqueTierra);    
+    let botonAtaqueTierra = document.getElementById('boton-tierra');
+    botonAtaqueTierra.addEventListener('click', ataqueTierra);  
+    let botonReiniciarJuego = document.getElementById('boton-reiniciar');
+    botonReiniciarJuego.addEventListener('click', reiniciarJuego);
 }
 
 function ataqueFuego(){
@@ -53,8 +55,8 @@ function combate (){
   if (ataqueJugador == ataqueEnemigo ){
     crearMensaje('Empate 🙃');       
   } else if (ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
-    vidasEnemigo--;
-    spanVidasEnemigo.innerHTML = vidasEnemigo;
+    vidasEnemigo--; //descontamos a la variable una unidad
+    spanVidasEnemigo.innerHTML = vidasEnemigo; //considerar que aquí siempre va la cantidad final a mostrar
     crearMensaje('Ganaste 🥳');
     
   } else if (ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO'){
@@ -74,6 +76,16 @@ function combate (){
     
   }
   
+  revisarVidas()
+}
+
+function revisarVidas() {
+    if(vidasEnemigo == 0){
+        crearMensajeFinal('GANASTE 🎉');
+
+    } else if (vidasJugador == 0){
+        crearMensajeFinal('PERDISTE 😭');
+    }
     
 }
 
@@ -83,6 +95,21 @@ function crearMensaje(resultado){
     let mensajes = document.createElement('p');
     mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' - ' + resultado;
     sectionMensajes.appendChild(mensajes);
+}
+
+function crearMensajeFinal(resultadoFinal){
+    let sectionMensajes = document.getElementById('mostrar-mensajes');
+    let mensajes = document.createElement('p');
+    mensajes.innerHTML =  resultadoFinal;
+    sectionMensajes.appendChild(mensajes);
+
+    let botonAtaqueFuego = document.getElementById('boton-fuego');
+    botonAtaqueFuego.disabled = true;
+    let botonAtaqueAgua = document.getElementById('boton-agua');
+    botonAtaqueAgua.disabled = true;
+    let botonAtaqueTierra = document.getElementById('boton-tierra');
+    botonAtaqueTierra.disabled = true;
+    
 }
 
 function seleccionarMascotaJugador() {
@@ -120,6 +147,9 @@ function seleccionarMascotaEnemigo(){
 
 }
 
+function reiniciarJuego(){
+    location.reload();
+}
 function aleatorio(min, max){
     return Math.floor(Math.random()*(max-min +1)+min)
 
