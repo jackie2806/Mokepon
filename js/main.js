@@ -5,6 +5,10 @@ let vidasEnemigo = 3;
 
 
 function iniciarJuego() {
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+    sectionSeleccionarAtaque.style.display = 'none';
+    let sectionReiniciarJuego = document.getElementById('reiniciar');
+    sectionReiniciarJuego.style.display = 'none';
     let botonMascotaJugador = document.getElementById('boton-mascota');
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);
     let botonAtaqueFuego = document.getElementById('boton-fuego');
@@ -89,30 +93,9 @@ function revisarVidas() {
     
 }
 
-
-function crearMensaje(resultado){
-    let sectionMensajes = document.getElementById('mostrar-mensajes');
-    let mensajes = document.createElement('p');
-    mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' - ' + resultado;
-    sectionMensajes.appendChild(mensajes);
-}
-
-function crearMensajeFinal(resultadoFinal){
-    let sectionMensajes = document.getElementById('mostrar-mensajes');
-    let mensajes = document.createElement('p');
-    mensajes.innerHTML =  resultadoFinal;
-    sectionMensajes.appendChild(mensajes);
-
-    let botonAtaqueFuego = document.getElementById('boton-fuego');
-    botonAtaqueFuego.disabled = true;
-    let botonAtaqueAgua = document.getElementById('boton-agua');
-    botonAtaqueAgua.disabled = true;
-    let botonAtaqueTierra = document.getElementById('boton-tierra');
-    botonAtaqueTierra.disabled = true;
-    
-}
-
 function seleccionarMascotaJugador() {
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+    sectionSeleccionarAtaque.style.display = 'block';
     let inputHipodoge = document.getElementById('hipodoge');
     let inputCapipepo = document.getElementById('capipepo');
     let inputRatigueya = document.getElementById('ratigueya');
@@ -147,6 +130,30 @@ function seleccionarMascotaEnemigo(){
 
 }
 
+function crearMensaje(resultado){
+    let sectionMensajes = document.getElementById('mostrar-mensajes');
+    let mensajes = document.createElement('p');
+    mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' - ' + resultado;
+    sectionMensajes.appendChild(mensajes);
+}
+
+function crearMensajeFinal(resultadoFinal){
+   
+    let sectionMensajes = document.getElementById('mostrar-mensajes');
+    let mensajes = document.createElement('p');
+    mensajes.innerHTML =  resultadoFinal;
+    sectionMensajes.appendChild(mensajes);
+
+    let botonAtaqueFuego = document.getElementById('boton-fuego');
+    botonAtaqueFuego.disabled = true;
+    let botonAtaqueAgua = document.getElementById('boton-agua');
+    botonAtaqueAgua.disabled = true;
+    let botonAtaqueTierra = document.getElementById('boton-tierra');
+    botonAtaqueTierra.disabled = true;
+    
+    let sectionReiniciarJuego = document.getElementById('reiniciar');
+    sectionReiniciarJuego.style.display = 'block';
+}
 function reiniciarJuego(){
     location.reload();
 }
@@ -154,7 +161,6 @@ function aleatorio(min, max){
     return Math.floor(Math.random()*(max-min +1)+min)
 
 }
-
 
 //La etiqueta SCRIPT que está en la etiqueta HEAD del HTML necesita que primero se cargue 
 window.addEventListener('load', iniciarJuego);
