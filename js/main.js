@@ -111,6 +111,7 @@ function seleccionarMascotaJugador() {
     } else {
         alert('SELECCIONA UNA MASCOTA');
     }
+
     seleccionarMascotaEnemigo();
 
 }
