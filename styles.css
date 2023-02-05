@@ -1,0 +1,5 @@
+
+/*Tipos de display:
+etiqueta label se visualiza en inline (no se puede modificar su alto, ni su ancho)
+La etiqueta input, y button se visualiza con inline-block
+Y las demás etiquetas por defecto tienen display: block*/
