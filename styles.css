@@ -1,0 +1,23 @@
+
+/*Tipos de display:
+etiqueta label se visualiza en inline (no se puede modificar su alto, ni su ancho)
+La etiqueta input, y button se visualiza con inline-block
+Y las demás etiquetas por defecto tienen display: block*/
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.tarjeta-de-mokepon{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+/*Reto botoncito*/
