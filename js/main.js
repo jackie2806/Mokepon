@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-
-function iniciarJuego(){    
-    let botonMascotaJugador = document.getElementById('boton-mascota')  
-    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-}
-
-function seleccionarMascotaJugador(){
-    alert('SELECCIONASTE TU MASCOTA')
-}
-//La etiqueta script que está en la etiqueta <head></head> del HTML necesita que primero se cargue 
-window.addEventListener('load', iniciarJuego)
-=======
 let ataqueJugador;
 let ataqueEnemigo;
 let vidasJugador = 3;
@@ -179,4 +166,3 @@ function aleatorio(min, max){
 //La etiqueta SCRIPT que está en la etiqueta HEAD del HTML necesita que primero se cargue 
 window.addEventListener('load', iniciarJuego);
 
->>>>>>> 515d1dd4a6df8af42d8e23a721640eede568943b
