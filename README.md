@@ -1,2 +1,2 @@
 # Mokepon
-Primer proyecto con Platzi
+Proyecto Curso Básico de Programación en Platzi
