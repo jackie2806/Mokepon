@@ -3,11 +3,29 @@
 etiqueta label se visualiza en inline (no se puede modificar su alto, ni su ancho)
 La etiqueta input, y button se visualiza con inline-block
 Y las demás etiquetas por defecto tienen display: block*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Shantell+Sans:wght@800&display=swap');
 
 *{
     box-sizing: border-box;
+    
 
 }
+body {
+    background-color:  #3A98B9;
+    color: #EEEEEE;
+    font-family: 'Fredoka One', cursive;
+    
+}
+
+.titulo{
+    font-size: 80px;
+}
+
+.subtitulo{
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
 #seleccionar-mascota{
     display: flex;
     flex-direction: column;
@@ -17,17 +35,8 @@ Y las demás etiquetas por defecto tienen display: block*/
 
 }
 
-.tarjeta-de-mokepon{
-    width: 100px;
-    height: 100px;
-    background-color: aquamarine;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 10px;
-    
-}
-
 .tarjetas{
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -35,6 +44,30 @@ Y las demás etiquetas por defecto tienen display: block*/
     gap: 30px;
 } 
 
+.tarjeta-de-mokepon{
+    width: 100px;
+    height: 100px;
+    background-color: #FFF1DC;
+    color: #3A98B9;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    border-radius: 30px;
+    
+}
 
+.tarjeta-de-mokepon img{
+    width: 80px;
+}
+
+
+
+input{
+    display: none;
+}
 
 /*Reto botoncito*/
