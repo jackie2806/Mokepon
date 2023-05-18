@@ -97,4 +97,11 @@ input{
     align-items: center;
 }
 
+.boton-de-ataque {
+    background-color: #FFF1DC;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
 
