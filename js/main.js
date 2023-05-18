@@ -94,6 +94,7 @@ function revisarVidas() {
 }
 
 function seleccionarMascotaJugador() {
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
     sectionSeleccionarAtaque.style.display = 'block';
     let inputHipodoge = document.getElementById('hipodoge');
@@ -103,11 +104,15 @@ function seleccionarMascotaJugador() {
     
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML= 'Hipodoge';
+        sectionSeleccionarMascota.style.display = 'none';
         
     } else if (inputCapipepo.checked){
         spanMascotaJugador.innerHTML= 'Capipepo';
+        sectionSeleccionarMascota.style.display = 'none';
+        
     } else if (inputRatigueya.checked){
         spanMascotaJugador.innerHTML= 'Ratigueya';
+        sectionSeleccionarMascota.style.display = 'none';
     } else {
         alert('SELECCIONA UNA MASCOTA');
     }
