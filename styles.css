@@ -91,4 +91,10 @@ input{
     display: none;
 }
 
+#seleccionar-ataque {
+    /*display: flex; se toma el estilo en linea de Js*/ 
+    flex-direction: column;
+    align-items: center;
+}
+
 
