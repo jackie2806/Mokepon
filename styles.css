@@ -99,9 +99,13 @@ input{
 
 .boton-de-ataque {
     background-color: #FFF1DC;
+    border-color: transparent;
+    width: 100px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
+    color:#3A98B9;
+    font-family: 'Poppins', sans-serif;;
 }
 
 
