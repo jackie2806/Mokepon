@@ -167,6 +167,6 @@ function aleatorio(min, max){
 
 }
 
-//La etiqueta SCRIPT que está en la etiqueta HEAD del HTML necesita que primero se cargue 
+// Esta lìnea de código permite que primero se cargue la etiqueta SCRIPT que está en la etiqueta HEAD del HTML 
 window.addEventListener('load', iniciarJuego);
 
