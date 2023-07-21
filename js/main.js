@@ -115,6 +115,9 @@ function seleccionarMascotaJugador() {
         sectionSeleccionarMascota.style.display = 'none';
     } else {
         alert('SELECCIONA UNA MASCOTA');
+        sectionSeleccionarMascota.style.display = 'flex';
+        sectionSeleccionarAtaque.style.display = 'none';
+        
     }
 
     seleccionarMascotaEnemigo();
@@ -136,10 +139,22 @@ function seleccionarMascotaEnemigo(){
 }
 
 function crearMensaje(resultado){
-    let sectionMensajes = document.getElementById('mostrar-mensajes');
-    let mensajes = document.createElement('p');
-    mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' - ' + resultado;
-    sectionMensajes.appendChild(mensajes);
+    let sectionMensajes = document.getElementById('resultado');
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador');
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo');
+    
+    let notificacion = document.createElement('p');
+    let nuevoAtaqueDelJugador = document.createElement('p');
+    let nuevoAtaqueDelEnemigo = document.createElement('p');
+
+    notificacion.innerHTML = resultado;
+    nuevoAtaqueDelJugador.innerHTML = ataquesDelJugador;
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo;
+    // let mensajes = document.createElement('p');
+    // mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' - ' + resultado;
+    sectionMensajes.appendChild(notificacion);
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
 }
 
 function crearMensajeFinal(resultadoFinal){
