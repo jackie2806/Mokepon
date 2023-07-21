@@ -6,8 +6,7 @@ Y las demás etiquetas por defecto tienen display: block*/
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&display=swap');
 
 *{
-    box-sizing: border-box;
-    
+    box-sizing: border-box;   
 
 }
 
@@ -106,6 +105,25 @@ input{
     border-radius: 20px;
     color:#3A98B9;
     font-family: 'Poppins', sans-serif;;
+}
+
+#mostrar-mensajes {
+    width: 280px;
+    background: #FFF1DC;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    color:#3A98B9;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;;
+}  
+
+#boton-reiniciar {
+    border: none;
+    color: #3A98B9;;
 }
 
 
