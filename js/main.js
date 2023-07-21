@@ -148,7 +148,7 @@ function crearMensaje(resultado){
     let nuevoAtaqueDelEnemigo = document.createElement('p');
 
     notificacion.innerHTML = resultado;
-    nuevoAtaqueDelJugador.innerHTML = ataquesDelJugador;
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
     nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo;
     // let mensajes = document.createElement('p');
     // mensajes.innerHTML =  'Tu mascota atacó '+ ataqueJugador + ', la mascota del enemigo atacó con '+ ataqueEnemigo + ' - ' + resultado;
