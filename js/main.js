@@ -107,13 +107,13 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarAtaque.style.display = "flex";
   
     if (inputHipodoge.checked) {
-      spanMascotaJugador.innerHTML = "Hipodoge";
+      spanMascotaJugador.innerHTML = inputHipodoge.id;
       sectionSeleccionarMascota.style.display = "none";
     } else if (inputCapipepo.checked) {
-      spanMascotaJugador.innerHTML = "Capipepo";
+      spanMascotaJugador.innerHTML = inputCapipepo.id;
       sectionSeleccionarMascota.style.display = "none";
     } else if (inputRatigueya.checked) {
-      spanMascotaJugador.innerHTML = "Ratigueya";
+      spanMascotaJugador.innerHTML = inputRatigueya.id;
       sectionSeleccionarMascota.style.display = "none";
     } else {
       alert("SELECCIONA UNA MASCOTA");
@@ -186,15 +186,9 @@ function revisarVidas() {
 
 
 function seleccionarMascotaEnemigo() {
-  let mascotaEnemigoAleatorio = aleatorio(1, 3);
-
-  if (mascotaEnemigoAleatorio == 1) {
-    spanMascotaEnemigo.innerHTML = "Hipodoge";
-  } else if (mascotaEnemigoAleatorio == 2) {
-    spanMascotaEnemigo.innerHTML = "Capipepo";
-  } else {
-    spanMascotaEnemigo.innerHTML = "Ratigueya";
-  }
+  let mascotaEnemigoAleatorio = aleatorio(0, mokepones.length-1);
+  spanMascotaEnemigo.innerHTML = mokepones[mascotaEnemigoAleatorio].nombre
+  
 }
 
 function crearMensaje(resultado) {
