@@ -244,7 +244,7 @@ function combate() {
       indexAmbosOponentes(index, index)
       crearMensaje("PERDISTE 😥");
       victoriasEnemigo++;
-      spanMascotaEnemigo.innerHTML = victoriasEnemigo;
+      spanVidasEnemigo.innerHTML = victoriasEnemigo;
     }
       
     
