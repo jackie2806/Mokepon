@@ -127,8 +127,8 @@ function seleccionarMascotaJugador() {
      
     } else {
       alert("SELECCIONA UNA MASCOTA");
-      //sectionSeleccionarMascota.style.display = "flex";
-      //sectionSeleccionarAtaque.style.display = "none";
+      sectionSeleccionarMascota.style.display = "flex";
+      sectionSeleccionarAtaque.style.display = "none";
     }
     extraerAtaques(mascotaJugador);
     seleccionarMascotaEnemigo();
@@ -166,14 +166,17 @@ function secuenciaAtaque(){
     botones.forEach((boton)=>{
         boton.addEventListener('click', (e) => {
             if(e.target.textContent === '🔥'){
-                ataqueJugador.push('FUEGO')
-                boton.style.background = '#B1D1C5'
+                ataqueJugador.push('FUEGO');
+                boton.style.background = '#B1D1C5';
+                boton.disabled = true;
             }else if (e.target.textContent === '💧'){
-                ataqueJugador.push('AGUA')
-                boton.style.background = '#B1D1C5'
+                ataqueJugador.push('AGUA');
+                boton.disabled = true;
+                boton.style.background = '#B1D1C5';
             } else {
                 ataqueJugador.push('TIERRA')
-                boton.style.background = '#B1D1C5'
+                boton.style.background = '#B1D1C5';
+                boton.disabled = true;
             }
             ataqueEnemigoAleatorio()
         })
@@ -190,18 +193,26 @@ function seleccionarMascotaEnemigo() {
 
 
 function ataqueEnemigoAleatorio() {
-  let ataqueAleatorio = aleatorio(0, ataqueEnemigoAleatorio.length-1);
-
-  if (ataqueAleatorio == 0 || ataqueAleatorio == 1) {
-    ataqueEnemigo.push("FUEGO");
-  } else if (ataqueAleatorio == 3 || ataqueAleatorio == 4) {
-    ataqueEnemigo.push("AGUA");
-  } else {
-    ataqueEnemigo.push("TIERRA");
-  }
+  let ataqueAleatorio = aleatorio(0, ataqueEnemigo.length-1);
+  console.log(ataqueAleatorio)
+ 
+  for(let index = 0;index < ataqueJugador.length; index++){
+    if(ataqueJugador[index] === "FUEGO"|| ataqueJugador[index] === "TIERRA"){
+      ataqueEnemigo.push(ataqueJugador[index]);
+      
+    } else if(ataqueJugador[index] === "AGUA" || ataqueJugador[index] === "FUEGO"){
+      ataqueEnemigo.push(ataqueJugador[index]);
+    } else if(ataqueJugador[index] === "TIERRA"|| ataqueJugador[index] === "AGUA"){
+      ataqueEnemigo.push(ataqueJugador[index]);
+    } else {
+      ataqueEnemigo.push(ataqueJugador[index]);
+    }
+      
+    
+  } 
   
   //combate();
-  iniciarPelea(); //llamamos a la función que inicia el combate)
+  iniciarPelea(); //llamamos a la función que inicia el combate
   console.log(ataqueEnemigo)
 }
 
@@ -223,8 +234,7 @@ function combate() {
     if(ataqueJugador[index] === ataqueEnemigo[index]){
       indexAmbosOponentes(index, index)
       crearMensaje("EMPATE 🙃");
-      victoriasJugador++;      
-      spanVidasJugador.innerHTML = victoriasJugador;
+      
     } else if(ataqueJugador[index] === "FUEGO" && ataqueEnemigo[index] === "TIERRA"){
       indexAmbosOponentes(index, index)
       crearMensaje("GANASTE 🥳");
@@ -278,9 +288,7 @@ function crearMensaje(resultado) {
 
 function crearMensajeFinal(resultadoFinal) {
   sectionMensajes.innerHTML = resultadoFinal;
-  botonAtaqueFuego.disabled = true;
-  botonAtaqueAgua.disabled = true;
-  botonAtaqueTierra.disabled = true;
+  
   sectionReiniciarJuego.style.display = "block";
 }
 function reiniciarJuego() {
