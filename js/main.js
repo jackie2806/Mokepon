@@ -54,6 +54,18 @@ let lienzo = mapa.getContext("2d");
 let intervalo;
 let mapaBackground = new Image();
 mapaBackground.src = "./assets/mokemap.png";
+
+let alturaQueBuscamos;
+let anchoDelMapa = window.innerWidth - 20;
+const anchoMaximoDelMapa = 350;
+if(anchoDelMapa > anchoMaximoDelMapa){
+    anchoDelMapa = anchoMaximoDelMapa-20;
+}
+alturaQueBuscamos = anchoDelMapa * 600 / 800;
+
+mapa.width = anchoDelMapa;
+mapa.height = alturaQueBuscamos;
+
 class Mokepon {
     constructor(nombre, foto, vida, fotoMapa, x = 10, y = 10){
         this.nombre = nombre
@@ -95,6 +107,14 @@ hipodoge.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     
 )
+hipodogeEnemigo.ataques.push(
+  {nombre: '💧', id:'boton-agua'},
+  {nombre: '💧', id:'boton-agua'},
+  {nombre: '💧', id:'boton-agua'},
+  {nombre: '🔥', id:'boton-fuego'},
+  {nombre: '🌱', id:'boton-tierra'},
+  
+)
 capipepo.ataques.push(
     {nombre: '🌱', id:'boton-agua'},
     {nombre: '🌱', id:'boton-agua'},
@@ -103,6 +123,14 @@ capipepo.ataques.push(
     {nombre: '🔥', id:'boton-tierra'},
     
 )
+capipepoEnemigo.ataques.push(
+  {nombre: '🌱', id:'boton-agua'},
+  {nombre: '🌱', id:'boton-agua'},
+  {nombre: '🌱', id:'boton-agua'},
+  {nombre: '💧', id:'boton-fuego'},
+  {nombre: '🔥', id:'boton-tierra'},
+  
+)
 ratigueya.ataques.push(
     {nombre: '🔥', id:'boton-agua'},
     {nombre: '🔥', id:'boton-agua'},
@@ -110,6 +138,14 @@ ratigueya.ataques.push(
     {nombre: '💧', id:'boton-fuego'},
     {nombre: '🌱', id:'boton-tierra'},
     
+)
+ratigueyaEnemigo.ataques.push(
+  {nombre: '🔥', id:'boton-agua'},
+  {nombre: '🔥', id:'boton-agua'},
+  {nombre: '🔥', id:'boton-agua'},
+  {nombre: '💧', id:'boton-fuego'},
+  {nombre: '🌱', id:'boton-tierra'},
+  
 )
 
 mokepones.push(hipodoge, capipepo, ratigueya);
@@ -163,7 +199,7 @@ function seleccionarMascotaJugador() {
     extraerAtaques(mascotaJugador);
     sectionVerMapa.style.display = "flex";   
     iniciarMapa();
-    seleccionarMascotaEnemigo();
+    
   }
 
 function extraerAtaques(mascotaJugador){
@@ -217,9 +253,11 @@ function secuenciaAtaque(){
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaEnemigoAleatorio = aleatorio(0, mokepones.length-1);
-    spanMascotaEnemigo.innerHTML = mokepones[mascotaEnemigoAleatorio].nombre
-    ataquesMokeponEnemigo = mokepones[mascotaEnemigoAleatorio].ataques
+    // let mascotaEnemigoAleatorio = aleatorio(0, mokepones.length-1);
+    // spanMascotaEnemigo.innerHTML = mokepones[mascotaEnemigoAleatorio].nombre
+    // ataquesMokeponEnemigo = mokepones[mascotaEnemigoAleatorio].ataques
+    spanMascotaEnemigo.innerHTML = hipodogeEnemigo.nombre
+    ataquesMokeponEnemigo = hipodogeEnemigo.ataque
     secuenciaAtaque();
   }
 
@@ -401,8 +439,8 @@ function sePresionaTecla(event){
 }
 
 function iniciarMapa(){
-  mapa.width = 320;
-  mapa.height = 400;
+  // mapa.width = 320;
+  // mapa.height = 400;
   mascotaJugadorObjeto = obtenerObjetoMascota(mascotaJugador);
   intervalo = setInterval(pintarCanvas, 50)
 
@@ -437,7 +475,11 @@ function revisarColision(enemigo){
       return;
     }
   detenerMovimiento()
-  alert('Hay colisión con '+ enemigo.nombre)
+  sectionSeleccionarAtaque.style.display = 'flex';
+  sectionVerMapa.style.display = 'none';
+  seleccionarMascotaEnemigo(enemigo);
+  clearInterval(intervalo)
+  //alert('Hay colisión con '+ enemigo.nombre)
 }
 
 // Esta línea de código permite que primero se cargue la etiqueta SCRIPT que está en la etiqueta HEAD del HTML

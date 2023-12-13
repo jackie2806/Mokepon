@@ -21,5 +21,6 @@
         "resultado",
         "vidas"
     ],
-    "cSpell.language": "en,lorem,es-ES,es"
+    "cSpell.language": "en,lorem,es-ES,es",
+    "editor.inlineSuggest.showToolbar": "onHover"
 }
