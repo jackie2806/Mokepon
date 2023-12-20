@@ -313,22 +313,22 @@ function combate() {
       indexAmbosOponentes(index, index)
       crearMensaje("GANASTE 🥳");
       victoriasJugador++;      
-      spanVidasJugador.innerHTML = victoriasJugador;
+      spanVidasJugador.innerHTML = `Tu puntaje <br> ${victoriasJugador}`;
     } else if(ataqueJugador[index] === "💧" && ataqueEnemigo[index] === "🔥"){
       indexAmbosOponentes(index, index)
       crearMensaje("GANASTE 🥳");
       victoriasJugador++;      
-      spanVidasJugador.innerHTML = victoriasJugador;
+      spanVidasJugador.innerHTML = `Tu puntaje <br> ${victoriasJugador}`;
     } else if(ataqueJugador[index] === "🌱" && ataqueEnemigo[index] === "💧"){
       indexAmbosOponentes(index, index)
       crearMensaje("GANASTE 🥳");
       victoriasJugador++;      
-      spanVidasJugador.innerHTML = victoriasJugador;
+      spanVidasJugador.innerHTML = `Tu puntaje <br> ${victoriasJugador}`;
     } else {
       indexAmbosOponentes(index, index)
       crearMensaje("PERDISTE 😥");
       victoriasEnemigo++;
-      spanVidasEnemigo.innerHTML = victoriasEnemigo;
+      spanVidasEnemigo.innerHTML = `Enemigo <br> ${victoriasEnemigo}`;
     } 
     
   } 

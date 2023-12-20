@@ -136,22 +136,17 @@ button:active {
     grid-template-columns: 100px 100px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    padding: auto;
+    gap: 50px;
 }
 .ataques-jugador, .ataques-enemigo{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#mascota-jugador{
-    /* flex-direction: column;
-    align-items: center; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     
 }
+
+
 
 #mascota-jugador img{
     width: 80px;
@@ -159,16 +154,6 @@ button:active {
 
 
 
-#mascota-enemigo{
-    /* flex-direction: column;
-    align-items: center; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-}
 
 #mascota-enemigo img{
     width: 80px;
