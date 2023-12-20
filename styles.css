@@ -142,6 +142,42 @@ button:active {
     flex-direction: column;
     align-items: center;
 }
+
+#mascota-jugador{
+    /* flex-direction: column;
+    align-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#mascota-jugador img{
+    width: 80px;
+}
+
+
+
+#mascota-enemigo{
+    /* flex-direction: column;
+    align-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#mascota-enemigo img{
+    width: 80px;
+}
+
+
+
+
+
 #ver-mapa{
     flex-direction: column;
     align-items: center;

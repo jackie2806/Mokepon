@@ -176,15 +176,31 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = "none";
    
     if (inputHipodoge.checked) {
-      spanMascotaJugador.innerHTML = inputHipodoge.id
-      mascotaJugador = inputHipodoge.id;
+      spanMascotaJugador.innerHTML = `
+      <p>${hipodoge.nombre}</p>
+      <img src=${hipodoge.foto} alt=${hipodoge.nombre}>
+      `;
+      //inputHipodoge.id
+      //mascotaJugador = inputHipodoge.id;
+      mascotaJugador= hipodoge.nombre;
     } else if (inputCapipepo.checked) {
-      spanMascotaJugador.innerHTML = inputCapipepo.id;
-      mascotaJugador = inputCapipepo.id;
+      spanMascotaJugador.innerHTML = `
+      <p>${capipepo.nombre}</p>
+      <img src=${capipepo.foto} alt=${capipepo.nombre}>
+      `;
+      mascotaJugador = capipepo.nombre;
+      // spanMascotaJugador.innerHTML = inputCapipepo.id;
+      // mascotaJugador = inputCapipepo.id;
      
     } else if (inputRatigueya.checked) {
-      spanMascotaJugador.innerHTML = inputRatigueya.id;
-      mascotaJugador = inputRatigueya.id;
+      spanMascotaJugador.innerHTML = `
+      <p>${ratigueya.nombre}</p>
+      <img src=${ratigueya.foto} alt=${ratigueya.nombre}>
+      `;
+      mascotaJugador = ratigueya.nombre;
+      
+      // spanMascotaJugador.innerHTML = inputRatigueya.id;
+      // mascotaJugador = inputRatigueya.id;
      
     } else {
       alert("SELECCIONA UNA MASCOTA");
@@ -212,7 +228,7 @@ function mostrarAtaques(ataques){
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-de-ataque BAtaque">${ataque.nombre}</button>
         `
-        contenedorAtaques.innerHTML += ataquesMokepon
+        contenedorAtaques.innerHTML += ataquesMokepon;
     })
     
     botonAtaqueAgua = document.getElementById("boton-agua");
@@ -244,8 +260,12 @@ function secuenciaAtaque(){
 
 function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = aleatorio(0, mokepones.length - 1);
-    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre;
-    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataque;
+    spanMascotaEnemigo.innerHTML= `
+    <p>${mokepones[mascotaAleatoria].nombre}</p>
+    <img src=${mokepones[mascotaAleatoria].foto} alt=${mokepones[mascotaAleatoria].nombre}>
+    `
+    //spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre; //Se muestra el nombre del mokepon
+    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataque; //Se muestra los ataques
     secuenciaAtaque();
 } 
 
